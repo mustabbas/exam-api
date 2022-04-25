@@ -24,6 +24,7 @@ default: &default
 development:
   <<: *default
   database: exam_api_development
+  url: postgres://zhqrolhqkxtsnl:d784eb2ab4159492d2bc24870a3184445e1cc0a202468a4cfa8e8e4a845a4301@ec2-52-73-155-171.compute-1.amazonaws.com:5432/d939e5oq5fhp9g
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -57,6 +58,7 @@ development:
 test:
   <<: *default
   database: exam_api_test
+  url: postgres://zhqrolhqkxtsnl:d784eb2ab4159492d2bc24870a3184445e1cc0a202468a4cfa8e8e4a845a4301@ec2-52-73-155-171.compute-1.amazonaws.com:5432/d939e5oq5fhp9g
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
