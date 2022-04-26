@@ -10,7 +10,7 @@ This is a Back end project build using Ruby on Rails for Exam Application.
 _ Rspec
 
 ## Live Demo
-https://mustexamapi.herokuapp.com/
+https://neon-platypus-45b4ed.netlify.app/
 
 
 ## Front End Repo

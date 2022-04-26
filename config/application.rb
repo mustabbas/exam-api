@@ -25,7 +25,7 @@ module ExamApi
     config.api_only = true
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'https://mustexamfront.herokuapp.com'
+        origins 'https://neon-platypus-45b4ed.netlify.app'
         resource '*', headers: :any, methods: [:get, :post, :patch, :put, :delete]
       end
     end

@@ -10,12 +10,14 @@ class Api::V1::TestController < ApplicationController
         json = JSON.parse(params[:QuestionData])
         tests = Test.new(name: params[:nameTest],description: params[:descriptionTest],question_quantity: json.length())
             if tests.save
-                json.each do |n|
-                    question = Question.new(name: n["nameQuestion"],description: n["descriptionQuestion"],test_id: tests.id)
-                    if question.save
-                        n["option"].each do |x|
-                            optionQuestion = OptionQuestion.new(name: x["nameOption"],correct: x["correct"],question_id: question.id)
-                            optionQuestion.save
+                if json
+                    json.each do |n|
+                        question = Question.new(name: n["nameQuestion"],description: n["descriptionQuestion"],test_id: tests.id)
+                        if question.save
+                            n["option"].each do |x|
+                                optionQuestion = OptionQuestion.new(name: x["nameOption"],correct: x["correct"],question_id: question.id)
+                                optionQuestion.save
+                            end
                         end
                     end
                 end
